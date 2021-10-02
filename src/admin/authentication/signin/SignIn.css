@@ -13,6 +13,22 @@
 .card__sign-in__btn button{
       width: 50%;
 }
+.pass-group{
+      display: flex;
+      flex-direction: row;
+      height: 36px;
+}
+.pass-inp{
+      border-radius: 4px 0px 0px 4px !important;
+      border-right: 0px !important;
+}
+.pass-btn{
+      border: none;
+      outline: none;
+      background-color: white;
+      border: 1px solid #ced4da;
+      border-radius: 0px 4px 4px 4px;
+}
 /* Mobile */
 @media only screen and (max-width: 739px){
       .card_sign-in{

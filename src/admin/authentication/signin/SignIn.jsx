@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {Card, Form, Button} from 'react-bootstrap'
 import { useAuth } from '../../../context/AuthContext';
 import { useHistory } from 'react-router';
@@ -7,6 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import './SignIn.css'
 
 function SignIn(props) {
+      const [isShow, setIsShow]= useState(false);
+      const [typePass, setTypePass] = useState('password');
       const emailRef = useRef();
       const passwordRef = useRef();
       const {signIn} = useAuth();
@@ -18,6 +20,15 @@ function SignIn(props) {
                   history.push('/Admin/home');
             }catch{
                   toast.error("Sign in failed !")
+            }
+      }
+      const handleShowPassword=()=>{
+            if(isShow === false){
+                  setIsShow(true)
+                  setTypePass('text')
+            }else{
+                  setIsShow(false)
+                  setTypePass('password')
             }
       }
       return (
@@ -32,7 +43,12 @@ function SignIn(props) {
                                     </Form.Group>
                                     <Form.Group id="password">
                                           <Form.Label>Password</Form.Label>
-                                          <Form.Control type='password' placeholder="Password: admin123" ref={passwordRef} required />
+                                          <div className="pass-group">
+                                                <Form.Control className="pass-inp" type={typePass} placeholder="Password: admin123" ref={passwordRef} required />
+                                                <button onClick={handleShowPassword} type="button" className="pass-btn">
+                                                      <i className="fas fa-eye"></i>
+                                                </button>
+                                          </div>
                                     </Form.Group>
                                     <div className="card__sign-in__btn">
                                           <Button type='submit'>Đăng nhập</Button>
