@@ -1,0 +1,24 @@
+.card_sign-in{
+      margin: auto;
+      margin-top: 30vh;
+      width: 50%;
+      box-shadow: 0px 0px 10px 2px rgb(0 0 0 / 31%);
+}
+.card__sign-in__btn{
+      padding: 14px 0px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+}
+.card__sign-in__btn button{
+      width: 50%;
+}
+/* Mobile */
+@media only screen and (max-width: 739px){
+      .card_sign-in{
+            width: 91.3%;
+      }
+      .card__sign-in__btn button{
+            width: 100%;
+      }
+}

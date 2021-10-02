@@ -1,0 +1,19 @@
+.cus__category-page{
+      margin-top: 60px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+}
+.cus__category-page__content{
+      padding: 12px 12px;
+}
+.cus__page__action{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+}
+.cus__page__action > div{
+      margin-top: -12px;
+      margin-left: 30px;
+      width: 300px;
+}

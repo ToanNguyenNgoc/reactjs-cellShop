@@ -1,3 +1,9 @@
+
+:root{
+  --admin-primary-color: #4285F4;
+  --client-primary-color: #d70018;
+  --cus-transition: all ease-in-out 0.5s;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +16,76 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+/* scroll bar */
+::-webkit-scrollbar{
+  width: 6px;
+}
+::-webkit-scrollbar-track{
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb{
+  border-radius: 3px;
+  background-color: #d70018;
+}
+.makeStyles-button-1{
+  margin: 4px !important;
+}
+.css-1ygcj2i-MuiTableCell-root,
+.css-1ex1afd-MuiTableCell-root{
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
+}
+.css-1ex1afd-MuiTableCell-root{
+  font-weight: 600 !important;
+}
+/* Tablet */
+@media only screen and (min-width: 740px) and (max-width: 1023px){
+  ::-webkit-scrollbar{
+    width: 1px;
+    height: 2px;
+  }
+  .container, .container-sm{
+    max-width: 700px !important;
+  }
+}
+/* Mobile */
+@media only screen and (max-width: 739px){
+  body{
+    font-weight: 500 !important;
+  }
+  /* scroll bar */
+  ::-webkit-scrollbar{
+      height: 2px;
+  }
+  .MuiDialogTitle-root,
+  .MuiDialogContent-root{
+    padding: 8px !important;
+  }
+  .MuiDialog-paper{
+    margin: 15px !important;
+  }
+}
+.MuiButton-root{
+  font-size: 12px !important;
+}
+.react-confirm-alert-body > h1{
+  font-size: 12px !important;
+}
+.react-confirm-alert-button-group > button{
+  background-color: var(--bs-green) !important;
+  transition: all ease-in-out 0.7s;
+}
+.react-confirm-alert-button-group > button:hover{
+  opacity: 0.8;
+}
+.MuiButton-root{
+  padding: 4px 8px !important;
+}
+.pagination{
+  flex-direction: row;
+  justify-content: center;
 }

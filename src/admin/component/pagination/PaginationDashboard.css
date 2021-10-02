@@ -1,0 +1,9 @@
+/* Mobile */
+@media only screen and (max-width: 739px){
+      .pagination{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+      }
+}

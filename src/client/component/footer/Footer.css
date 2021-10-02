@@ -1,0 +1,123 @@
+.cus-footer{
+      box-shadow: 0px -8px 9px -5px rgba(0,0,0,0.23);
+      background-color: white;
+}
+.cus-footer__top{
+      padding: 15px 0px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+}
+.cus-footer__top--shop,
+.cus-footer__top--contact,
+.cus-footer__top--service,
+.cus-footer__top--policy{
+      width: 25%;
+}
+.cus-footer__top--shop__top,
+.cus-footer__top--shop__payment{
+      width: 100%;
+}
+.cus-footer__top--title{
+      color: var(--bs-gray-800);
+      font-size: 14px;
+      margin-bottom: 5px;
+}
+.cus-footer__top--shop__top{
+      margin-bottom: 6px;
+}
+.cus-footer__top--shop__top p,
+.cus-footer__top--contact p,
+.cus-footer__top--service p,
+.cus-footer__top--policy p{
+      font-size: 12px;
+      color: var(--bs-gray-800);
+      margin-bottom: 0px;
+}
+/* category footer */
+.cus-footer__bottom .container{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+}
+.cus-footer__bottom--category{
+      position: relative;
+      width: 41.5%;
+}
+.cus-footer__bottom--category .cl-header__category{
+      width: 100%;
+      position: absolute;
+      z-index: 0;
+      display: block;
+      box-shadow: none;
+      padding: 0px;
+}
+.cus-footer__bottom--category .cl-header__category ul{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+}
+.cus-footer__bottom--category .cl-header__category ul li{
+      margin: 3px 10px;
+      padding: 0;
+      font-size: 12px;
+      position: relative;
+}
+.cus-footer__bottom--category .cl-header__category ul li::before{
+      margin: 3px 0px 0px -2px;
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 12px;
+      background-color: #444444;
+}
+.cus-footer__bottom--category .cl-header__category ul li::after{
+      margin: 3px 0px 0px 2px;
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 12px;
+      background-color: #444444;
+}
+.cus-footer__bottom--category .cl-header__category ul li:hover{
+      margin: 3px 10px;
+      background-color: white;
+}
+.cus-footer__bottom--wrapper{
+      width: 66.66%;
+      padding-left: 20px;
+}
+.cus-footer__bottom--wrapper iframe{
+      width: 100%;
+}
+.align-center{
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 0px;
+}
+/* Mobile */
+@media only screen and (max-width: 739px){
+      .cus-footer{
+            margin-bottom: 50px;
+      }
+      .cus-footer__top{
+            flex-wrap: wrap;
+      }
+      .cus-footer__top--shop,
+      .cus-footer__top--contact,
+      .cus-footer__top--service,
+      .cus-footer__top--policy{
+            width: 50%;
+      }
+      .cus-footer__bottom--category .cl-header__category{
+            margin: 0px;
+      }
+      .cus-footer__bottom--category{
+            width: 100%;
+      }
+      .cus-footer__bottom--category .cl-header__category ul{
+            margin-bottom: 54px;
+      }
+}

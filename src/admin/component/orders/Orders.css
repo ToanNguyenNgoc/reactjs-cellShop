@@ -1,0 +1,6 @@
+/* Mobile */
+@media only screen and (max-width: 739px){
+      .cus__category-page__content{
+            overflow-x: scroll;
+      }
+}

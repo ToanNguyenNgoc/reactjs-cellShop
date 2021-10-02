@@ -1,0 +1,107 @@
+.cus__product--page{
+      margin-top: 60px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+}
+.cus-img__item{
+      width: 80px;
+}
+.cus__product--page__content{
+      padding: 12px 12px;
+}
+.cus-form{
+      display: flex;
+      flex-direction: column;
+}
+/* upload image */
+.form__image{
+      padding: 10px 0px;
+      display: flex;
+      flex-direction: row;
+}
+.form__image img{
+      width: 25%;
+}
+.form__image-control{
+      width: 75%;
+      padding-left: 20px;
+}
+.form__image-control progress{
+      width: 50%;
+      height: 40px;
+}
+.form__image-control button{
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 6px 14px;
+      color: white;
+      background-color: var(--admin-primary-color);
+      border-radius: 4px;
+      transition: var(--cus-transition);
+}
+.form__image-control button:hover{
+      opacity: 0.6;
+}
+.cus__form-product{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+}
+.field-group{
+      padding: 10px 0px;
+      display: flex;
+      flex-direction: column;
+}
+.field-group label{
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+}
+.field-group select,
+.field-group input{
+      width: 50%;
+      padding: 6px 10px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 6px;
+      outline: none;
+      border: 1px solid rgb(216, 216, 216);
+}
+.submit-btn{
+      width: 50% !important;
+}
+
+/* Mobile */
+@media only screen and (max-width: 1023px){
+      .cus__product--page__content {
+            padding: 12px 6px;
+            width: 100% !important;
+      }
+      .bg-light{
+            font-size: 14px !important;
+      }
+      .cus-img__item{
+            width: 80px;
+      }
+      .form__image{
+            flex-direction: column;
+      }
+      .form__image img{
+            width: 100%;
+      }
+      .form__image-control{
+            padding-left: 0px;
+            width: 100%;
+      }
+      .form__image-control progress{
+            width: 100%;
+      }
+      .field-group select, .field-group input{
+            width: 100%;
+      }
+      .submit-btn{
+            width: 100% !important;
+      }
+}

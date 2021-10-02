@@ -68,3 +68,46 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### `Product detail`
+      +Display list Product
+            -Product Field
+                  +id
+                  +categoryId
+                  +productName
+                  +productImage
+                  +productDescription
+                  +price
+                  +discount
+                  +active
+                  +quantity
+                  +sale
+            -Get product detail page
+      ----------Done----------
+      +Create form product- Using Page form
+            -Add new product
+                  *select option: categoryId from collection('Category')
+                  *Active: active product (boolean: true-false)
+                  *Sale: sale product (boolean: true- false)
+            -Update product
+            -Pagination
+      ----------Done----------
+      +Product form page
+            -upload image
+            -productDescription: using CKEditor, display to Product detail <----------Done---------->
+      +Login using firebase <----------Done---------->
+      +make UI dashboard <----------Done---------->
+      +filter searching <----------Done---------->
+      +create sort price <----------Done---------->
+      +create review product  <----------Done---------->
+      +add to cart (use Redux, Redux - toolkit) <----------Done---------->
+            -create cartSlice
+            -create config store
+      +making payment customer (checkout cart) <----------Done---------->
+      +Admin dashboard
+            -get list order and view order detail <----------Done---------->
+            -get list order by customer <----------Done---------->
+      +make banner product, when customer click banner go to page this product details <----------Done---------->
+      +make UI store <----------Done---------->
+      +export PDF or excel
+      +chart

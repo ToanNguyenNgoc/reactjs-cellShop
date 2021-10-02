@@ -1,0 +1,15 @@
+.ad-banner-product{
+      width: 80%;
+}
+.ad-form__banner{
+      padding: 10px 0px;
+      display: flex;
+      flex-direction: column;
+}
+.ad-form__banner button{
+      width: 20%;
+}
+.ad-form__banner input{
+      padding: 6px 8px;
+      margin-top: 10px;
+}

@@ -1,0 +1,22 @@
+.cus-user-page{
+      margin-top: 60px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+}
+.cus-user-page__content{
+      padding: 12px 12px;
+}
+.mt-10{
+      margin-top: 10px;
+}
+/* Mobile */
+@media only screen and (max-width: 1023px){
+      .cus-user-page{
+            width: 100%;
+      }
+      .cus-user-page__content{
+            width: 100% !important;
+            padding: 12px 6px;
+      }
+}
