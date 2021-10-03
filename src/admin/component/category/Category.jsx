@@ -6,6 +6,7 @@ import CategoryPagination from './CategoryPagination';
 import Button from '@material-ui/core/Button';
 import CategoryFormDialog from './CategoryFormDialog';
 import { AppContext } from '../../../context/AppProvider';
+import useSearchTerm from '../../../customHooks/useSearchTerm'
 import TextField from '@material-ui/core/TextField';
 import './style.css';
 
@@ -17,7 +18,6 @@ function Category(props) {
       const [categoriesPerPage] = useState(6);
       const [currentCategoryPage, setCurrentCategoryPage] = useState([]);
       const [search, setSearch] = useState('');
-      const [filterCategory, setFilterCategory] = useState([]);
       const [open, setOpen] = useState(false);
       const handleOnSaveOrUpdate=(values)=>{
             if(currentId===''){
@@ -39,18 +39,7 @@ function Category(props) {
             e.preventDefault();
             setSearch(e.target.value);
       }
-      useEffect(()=>{
-            async function handleSearchChange(){
-                  const categoryChange = categoryList.filter(item => {
-                        return Object.keys(item).some(key => 
-                              item[key].toString().toLowerCase().includes(search.toString().toLowerCase())
-                              )
-                  })
-                  setFilterCategory(categoryChange);
-            }
-            handleSearchChange();
-      },[categoryList, search])
-      //Pagination
+      const filterCategory = useSearchTerm(search, categoryList)
       useEffect(()=>{
             async function setCurrentCategoriesPage(){
                   if (filterCategory) {

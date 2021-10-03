@@ -3,7 +3,8 @@ import { useParams } from 'react-router';
 import {Link} from 'react-router-dom'
 import { AppContext } from '../../../context/AppProvider';
 import ProductItem from '../productItem/ProductItem';
-import {Container} from 'react-bootstrap'
+import {Container} from 'react-bootstrap';
+import useSearchTerm from '../../../customHooks/useSearchTerm';
 import Footer from '../footer/Footer';
 
 
@@ -11,24 +12,12 @@ import Footer from '../footer/Footer';
 function ProductBySearching(props) {
       const {search} = useParams();
       const {productList} = useContext(AppContext);
-      const [productBySearch, setProductBySearch] = useState([]);
       //
       useEffect(()=>{
             document.title = `Kết quả tìm kiếm cho: ${search}`
       },[search])
       //
-      useEffect(()=>{
-            async function handleSearchChange(){
-                  const productChange = productList.filter(item => {
-                        return Object.keys(item).some(key => 
-                              item[key].toString().toLowerCase().includes(search.toString().toLowerCase())
-                              )
-                  })
-                  setProductBySearch(productChange);
-            }
-            handleSearchChange();
-      },[productList, search]);
-      //sort price
+      const productBySearch = useSearchTerm(search, productList)
       const [productSort, setProductSort] = useState([]);
       const [sort, setSort] = useState({
             _sortPrice: productBySearch

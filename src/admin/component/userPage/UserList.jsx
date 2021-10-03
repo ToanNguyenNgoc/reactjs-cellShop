@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import formatDate from '../../../commons/formatDate';
 import './style.css';
 import TextField from '@material-ui/core/TextField';
+import useSearchTerm from '../../../customHooks/useSearchTerm'
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@mui/material';
 
 UserList.propTypes = {
@@ -20,11 +21,7 @@ function UserList(props) {
             e.preventDefault();
             setSearch(e.target.value);
       }
-      const result = users.filter(item => {
-            return Object.keys(item).some(key =>
-                  item[key].toString().toLowerCase().includes(search.toString().toLowerCase())
-            )
-      })
+      const result = useSearchTerm(search, users)
       return (
             <div className="table-responsive mt-10">
                   <TextField id="standard-basic" label="Enter search..." onChange={handleChange} value={search} />

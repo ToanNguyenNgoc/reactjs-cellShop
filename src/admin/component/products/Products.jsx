@@ -6,6 +6,7 @@ import firebase from 'firebase/app'
 import ProductList from './ProductList'
 import useStyles from '../../../customHooks/useStyles';
 import { AppContext } from '../../../context/AppProvider';
+import useSearchTerm from '../../../customHooks/useSearchTerm'
 import { confirmAlert } from 'react-confirm-alert'; 
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import ProductPagination from './ProductPagination';
@@ -21,7 +22,6 @@ function Products(props) {
       const [productPerPage] = useState(5);
       const [currentProductPage, setCurrentProductPage] = useState([]);
       const [search, setSearch] = useState('');
-      const [filterProduct, setFilterProduct] = useState([]);
 
       const handleGotoCreatePage=()=>{
             const url='/Admin/product/form-page';
@@ -61,18 +61,7 @@ function Products(props) {
             e.preventDefault();
             setSearch(e.target.value);
       }
-      useEffect(()=>{
-            async function handleSearchChange(){
-                  const productChange = productList.filter(item => {
-                        return Object.keys(item).some(key => 
-                              item[key].toString().toLowerCase().includes(search.toString().toLowerCase())
-                              )
-                  })
-                  setFilterProduct(productChange);
-            }
-            handleSearchChange();
-      },[productList, search])
-      //pagination
+      const filterProduct = useSearchTerm(search, productList)
       useEffect(()=>{
             async function setCurrentProductsPage(){
                   if (filterProduct) {
